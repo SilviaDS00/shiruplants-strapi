@@ -1,6 +1,5 @@
 module.exports = [
   'strapi::errors',
-  'strapi::security',
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
@@ -9,4 +8,31 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-];
+    {
+      name: 'strapi::security',
+      config: {
+        contentSecurityPolicy: {
+          useDefaults: true,
+          directives: {
+            'connect-src': ["'self'", 'https:'],
+            'img-src': [
+              "'self'",
+              'data:',
+              'blob:',
+              'dl.airtable.com',
+              'https://shiruplants.s3.eu-west-3.amazonaws.com/',
+            ],
+            'media-src': [
+              "'self'",
+              'data:',
+              'blob:',
+              'dl.airtable.com',
+              'https://shiruplants.s3.eu-west-3.amazonaws.com/',
+            ],
+            upgradeInsecureRequests: null,
+          },
+        },
+      },
+    },
+  ];
+
