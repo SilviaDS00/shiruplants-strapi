@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,7 +25,7 @@
       "type": "decimal",
       "required": true
     },
-    "disccount": {
+    "discount": {
       "type": "integer"
     },
     "slug": {
@@ -37,20 +38,20 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "gallery": {
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "gallery": {
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
